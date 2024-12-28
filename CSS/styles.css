@@ -1,0 +1,396 @@
+/* CSS Variables for Color Palette */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #18bc9c;
+    --accent-color: #f39c12;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+    --text-color: #7f8c8d;
+    --background-overlay: rgba(0, 0, 0, 0.6);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    color: #2c3e50;
+}
+
+a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(44, 62, 80, 0.9) !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--accent-color) !important;
+}
+
+.nav-link {
+    color: #ecf0f1 !important;
+    margin-left: 1rem;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#heroCarousel {
+    width: 100%;
+    height: 100%;
+}
+
+#heroCarousel .carousel-inner {
+    height: 100%;
+}
+
+#heroCarousel .carousel-item {
+    height: 100%;
+}
+
+#heroCarousel .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+}
+
+#welcome-text {
+    font-size: 3rem;
+    color: var(--accent-color);
+    animation: fadeInDown 1s ease forwards;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#content-container {
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.hero-ready #content-container {
+    opacity: 1;
+}
+
+#scripture-text {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #bdc3c7;
+}
+
+#typed-quotes {
+    font-size: 1.25rem;
+    color: #bdc3c7;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(90deg, var(--accent-color), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 3D Hover Effects */
+.hover-3d {
+    perspective: 1000px;
+}
+
+.hover-3d .service-card,
+.hover-3d .event-card,
+.hover-3d .card {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hover-3d:hover .service-card,
+.hover-3d:hover .event-card,
+.hover-3d:hover .card {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Service Cards */
+.service-card {
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+.service-icon {
+    margin-bottom: 1rem;
+}
+
+/* Event Cards */
+.event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+.event-card img {
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+}
+
+.event-card .card-body {
+    background: #f9f9f9;
+    border-top: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Fixed Gallery Images - Removed since Gallery is deleted */
+
+/* Curious Section */
+.curious-section h3 {
+    font-size: 1.75rem;
+    color: #2c3e50;
+}
+
+.curious-section .card {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.curious-section .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Weekly Services Section */
+#services h2, #services h3 {
+    color: #2c3e50;
+}
+
+#services .row.gx-4 {
+    margin-top: 2rem;
+}
+
+/* Devotionals and Bible Study Section */
+#devotionals h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+#devotionals .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+}
+
+/* Modals */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-body {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.modal-body iframe {
+    border: none;
+    width: 100%;
+    height: 600px; /* Adjust as needed */
+}
+
+#messageModal #iframeLoader,
+#branhamModal #iframeLoader,
+#bibleStudyModal #iframeLoader,
+#dailyBreadModal #iframeLoader {
+    z-index: 1051; /* Above the iframe */
+}
+
+/* Contact Us Section */
+#contact h4 {
+    font-size: 1.25rem;
+    color: #2c3e50;
+}
+
+#contact .nav-tabs .nav-link {
+    font-size: 1rem;
+    color: #555;
+    border: 1px solid transparent;
+}
+
+#contact .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+#contact .tab-content form .form-control {
+    border-radius: 4px;
+}
+
+#contact .tab-content button {
+    margin-top: 1rem;
+}
+
+#contact iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact .p-4 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+/* Footer Styles */
+footer {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+footer h5 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer .bi:hover {
+    color: var(--primary-color);
+}
+
+footer .small {
+    font-size: 0.85rem;
+}
+
+footer hr {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Scroll-Based Animations */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .gallery-img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery-img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    #welcome-text {
+        font-size: 2.5rem;
+    }
+
+    #scripture-text {
+        font-size: 1.5rem;
+    }
+
+    #typed-quotes {
+        font-size: 1rem;
+    }
+
+    .gallery-img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Responsive Iframe Design */
+    #messageModal #messageIframe,
+    #branhamModal #messageIframe,
+    #bibleStudyModal #messageIframe,
+    #dailyBreadModal #messageIframe {
+        height: 400px; /* Adjusted for smaller screens */
+    }
+}
